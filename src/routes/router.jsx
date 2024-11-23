@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import HomeLayout from "../Layouts/HomeLayout";
 import HomePage from "../Page/HomePage";
 import LearnPage from "../Page/LearnPage";
+import Lesson from "../components/Lesson";
 
 const fetchData = async () => {
     const response = await fetch("/vocab.json");
@@ -21,9 +22,13 @@ const router = createBrowserRouter([
                 element: <HomePage></HomePage>
             },
             {
-                path: "/learn",
+                path: "/lessons",
                 element: <LearnPage></LearnPage>,
                 loader: fetchData,
+            },
+            {
+                path: "/lessons/:id",
+                element: <Lesson></Lesson>
             }
         ]
     },
