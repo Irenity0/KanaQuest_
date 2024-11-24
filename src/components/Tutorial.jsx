@@ -23,7 +23,7 @@ const Tutorials = () => {
         {userLoggedIn && (
           <div className="mt-6 flex justify-center">
             <Link
-              to="/tutorials"
+              to="/tutorial"
               className="btn btn-outline text-secondary border-2 border-secondary hover:bg-secondary hover:text-[#FFDEB6]"
             >
               View More Tutorials

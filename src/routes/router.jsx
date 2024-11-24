@@ -9,6 +9,7 @@ import ErrorPage from "../Page/ErrorPage";
 import AuthLayout from "../Layouts/AuthLayout";
 import Login from "../Page/LoginPage";
 import Register from "../Page/RegisterPage";
+import PrivateRoute from "./privateRoute";
 
 const fetchData = async () => {
     const response = await fetch("/vocab.json");
@@ -22,6 +23,7 @@ const router = createBrowserRouter([
     {
         path: "/",
         element: <HomeLayout></HomeLayout>,
+        errorElement: <ErrorPage></ErrorPage>,
         children: [
             {
                 path: "",
@@ -34,11 +36,11 @@ const router = createBrowserRouter([
             },
             {
                 path: "/lessons/:id",
-                element: <Lesson></Lesson>
+                element: <PrivateRoute><Lesson></Lesson></PrivateRoute>
             },
             {
                 path: "/tutorial",
-                element: <TutorialPage></TutorialPage>
+                element: <PrivateRoute><TutorialPage></TutorialPage></PrivateRoute>
             },
             {
                 path: "/aboutus",
