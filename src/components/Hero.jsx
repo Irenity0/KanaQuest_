@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Hero = () => {
     return (
         <div>
@@ -11,7 +13,7 @@ const Hero = () => {
         Unlock the power of the Japanese language with a personalized vocabulary learning experience. 
         Explore, learn, and perfect your skills through interactive lessons and fun challenges.
       </p>
-      <button className="btn border-2 border-secondary text-secondary">Start Your Journey</button>
+      <button className="btn border-2 border-secondary text-secondary"><Link to={"/lessons"}>Start Your Journey</Link></button>
     </div>
   </div>
 </div>

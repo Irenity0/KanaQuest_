@@ -3,6 +3,12 @@ import HomeLayout from "../Layouts/HomeLayout";
 import HomePage from "../Page/HomePage";
 import LearnPage from "../Page/LearnPage";
 import Lesson from "../components/Lesson";
+import TutorialPage from "../Page/TutorialPage";
+import AboutUs from "../components/AboutUs";
+import ErrorPage from "../Page/ErrorPage";
+import AuthLayout from "../Layouts/AuthLayout";
+import Login from "../Page/LoginPage";
+import Register from "../Page/RegisterPage";
 
 const fetchData = async () => {
     const response = await fetch("/vocab.json");
@@ -29,26 +35,34 @@ const router = createBrowserRouter([
             {
                 path: "/lessons/:id",
                 element: <Lesson></Lesson>
+            },
+            {
+                path: "/tutorial",
+                element: <TutorialPage></TutorialPage>
+            },
+            {
+                path: "/aboutus",
+                element: <AboutUs></AboutUs>
             }
         ]
     },
     {
         path: "/auth",
-        element: <h1>auth</h1>,
+        element: <AuthLayout></AuthLayout>,
         children: [
             {
                 path: "/auth/login",
-                element: <h1>login</h1>
+                element: <Login></Login>
             },
             {
                 path: "/auth/register",
-                element: <h1>register</h1>
+                element: <Register></Register>
             }
         ]
     },
     {
         path: "*",
-        element: <h1>error</h1>
+        element: <ErrorPage></ErrorPage>
     }
 ]);
 

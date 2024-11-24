@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
     return (
@@ -25,23 +25,23 @@ const Navbar = () => {
                 <li><NavLink to={"/"}>Home</NavLink></li> 
                 <li><NavLink to={"/lessons"}>Start_Learning</NavLink></li> 
                 <li><NavLink to={"/tutorial"}>Tutorials</NavLink></li> 
-                <li><NavLink to={"/aboutUs"}>About_Us</NavLink></li> 
+                <li><NavLink to={"/aboutus"}>About_Us</NavLink></li> 
                 <li className="hidden"><NavLink to={"/profile"}>My_Profile</NavLink></li>  
               </ul>
             </div>
-            <a className="btn btn-ghost text-xl text-primary">KanaQuest_</a>
+            <Link to={"/"} className="btn btn-ghost text-xl text-primary">KanaQuest_</Link>
           </div>
           <div className="navbar-center hidden lg:flex">
             <ul className="menu menu-horizontal px-1">
                 <li><NavLink to={"/"}>Home</NavLink></li> 
                 <li><NavLink to={"/lessons"}>Start_Learning</NavLink></li> 
                 <li><NavLink to={"/tutorial"}>Tutorials</NavLink></li> 
-                <li><NavLink to={"/aboutUs"}>About_Us</NavLink></li> 
+                <li><NavLink to={"/aboutus"}>About_Us</NavLink></li> 
                 <li className="hidden"><NavLink to={"/profile"}>My_Profile</NavLink></li> 
             </ul>
           </div>
           <div className="navbar-end">
-            <a className="btn border-2 border-primary text-primary">Log In</a>
+            <a className="btn border-2 border-primary text-primary"><Link to={"/auth/login"}>Log In</Link></a>
           </div>
         </div>
     );
