@@ -1,6 +1,11 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import { FaEye } from "react-icons/fa";
 
 const Register = () => {
+
+    const [showPassword, setShowPassword] = useState(false);
+
     return (
         <form className="card-body md:w-5/6 mx-auto my-12">
         <h1 className="text-5xl font-extrabold text-center text-primary">Register Page</h1>
@@ -36,18 +41,25 @@ const Register = () => {
             </div>
 
             {/* password field */}
-            <div className="form-control">
+            <div className="form-control relative">
                 <label className="label">
-                    <span className="label-text text-accent font-semibold">Password</span>
+                    <span className="label-text">Password</span>
                 </label>
                 <input
                     name="password"
-                    type="password"
+                    type={showPassword ? 'text' : 'password'}
                     placeholder="password"
-                    className="input input-bordered border-accent"
-                    required/>
+                    className="input input-bordered"
+                    required
+                />
+                <button
+                    type="button"
+                    className="btn btn-sm absolute bg-accent/30 hover:bg-accent/30 border-none right-4 top-1/2 transform -translate-y-1/2"
+                    onClick={() => setShowPassword(!showPassword)} >
+                    <FaEye></FaEye>
+                </button>
                 <label className="label">
-                    <Link to="/auth/forgot-password" className="label-text-alt link link-hover text-black">Forgot password?</Link>
+                    <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                 </label>
             </div>
 
